@@ -22,10 +22,10 @@
             <th>ELIMINAR</th>
             <th>CAMBIAR ESTADO</th>
         </tr>
-        <tr th:each="l : ${libros}">
+        <tr th:each="l : ${libros}" th:classappend="${l.prestado}?'tr__color':''">
             <td th:text="${l.titulo}"></td>
             <td th:text="${l.autor}"></td>
-            <td th:text="${l.prestado}?'Disponible':'Prestado'"></td>
+            <td th:text="${l.prestado}?'Prestado':'Disponible'"></td>
             <td><a th:href="@{/delete/{id}(id=${l.id})}"><button>Eliminar</button></a></td>
             <td><a th:href="@{/toggle/{id}(id=${l.id})}"><button>Cambiar</button></a></td>
         </tr>

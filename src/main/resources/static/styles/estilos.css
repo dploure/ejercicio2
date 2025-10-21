@@ -23,15 +23,21 @@ a:visited{
     margin-bottom: 50px;
 }
 table{
+    border-collapse: collapse;
     justify-self: center;
     text-align: center;
     width: 60%;
 }
 th{
-    height: 35px;
+    height: 40px;
     width: 20%;
 }
 tr{
-    height: 35px;
+    height: 40px;
     width: 20%;
+    border-bottom: 1px solid black;
+    border-radius: 15px;
+}
+.tr__color{
+    background-color: rgb(253, 244, 201);
 }
