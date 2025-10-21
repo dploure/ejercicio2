@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles/estilos.css}">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Lsitado de libros</h1>
+    <ul th:each="l : ${libros}">
+        <li th:text="${l}"></li>
+    </ul>
+</body>
+</html>
