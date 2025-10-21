@@ -8,14 +8,25 @@
 </head>
 <body>
     <h1>Libros para añadir</h1>
-    <a th:href="@{/add(titulo='Los miserables',autor='Víctor Hugo')}"><button>Los miserables</button></a>
-    <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button>Ensayo sobre la ceguera</button></a>
-    <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button>1984</button></a>
-    <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button>Cementerio de animales</button></a>
+    <a th:href="@{/add(titulo='Los miserables',autor='Víctor Hugo')}"><button class="button__grande">Los miserables</button></a>
+    <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button class="button__grande">Ensayo sobre la ceguera</button></a>
+    <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button class="button__grande">1984</button></a>
+    <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button class="button__grande">Cementerio de animales</button></a>
 
     <h1>Listado de libros</h1>
-    <ul th:each="l : ${libros}">
-        <li th:text="${l}"></li>
-    </ul>
+    <table>
+        <tr>
+            <th>TITULO</th>
+            <th>AUTOR</th>
+            <th>PRESTADO</th>
+            <th>ELIMINAR</th>
+        </tr>
+        <tr th:each="l : ${libros}">
+            <td th:text="${l.titulo}"></td>
+            <td th:text="${l.autor}"></td>
+            <td th:text="${l.prestado}?'Disponible':'Prestado'"></td>
+            <td><a th:href="@{/delete/{id}(id=${l.id})}"><button>Eliminar</button></a></td>
+        </tr>
+    </table>
 </body>
 </html>
