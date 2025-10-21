@@ -2,24 +2,31 @@ package main.ejercicio2.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 import model.Libro;
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
+
 
 @Controller
 public class Controlador {
+    ArrayList<Libro> biblioteca = new ArrayList<>();
+    private int indice=1;
 
     @GetMapping("/")
     public String paginaPrincipal(Model modelo){
-        List<Libro> biblioteca= Arrays.asList(
-            new Libro(1, "Los Miserables", "Víctor Hugo", false),
-            new Libro(2, "Ensayo sobre la ceguera", "José Saramago", false),
-            new Libro(3, "1984", "George Orwell", false),
-            new Libro(4, "Cementerio de animales", "Stephen King", false)
-        );
         modelo.addAttribute("libros", biblioteca);
         return "index";
+    }
+
+    @GetMapping("/add")
+    public String añadirLibro(
+        @RequestParam String titulo,
+        @RequestParam String autor,
+        Model model
+    ){
+        biblioteca.add(new Libro(indice++, titulo, autor, false));
+        return "redirect:/";
     }
 
 }

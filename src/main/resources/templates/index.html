@@ -7,7 +7,13 @@
     <title>Ejercicio 2</title>
 </head>
 <body>
-    <h1>Lsitado de libros</h1>
+    <h1>Libros para añadir</h1>
+    <a th:href="@{/add(titulo='Los miserables',autor='Víctor Hugo')}"><button>Los miserables</button></a>
+    <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button>Ensayo sobre la ceguera</button></a>
+    <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button>1984</button></a>
+    <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button>Cementerio de animales</button></a>
+
+    <h1>Listado de libros</h1>
     <ul th:each="l : ${libros}">
         <li th:text="${l}"></li>
     </ul>
