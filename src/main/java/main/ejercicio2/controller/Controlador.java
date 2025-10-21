@@ -32,4 +32,14 @@ public class Controlador {
         return "redirect:/";
     }
 
+    @GetMapping("/toggle/{id}")
+    public String cambiarEstado(@PathVariable int id){
+        biblioteca.stream()
+        .filter(l -> l.getId()==id)
+        .findFirst()
+        .ifPresent(l -> {
+            l.setPrestado(!l.isPrestado());
+        });
+        return "redirect:/";
+    }
 }
