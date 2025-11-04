@@ -8,7 +8,7 @@ ul{
     padding-left: 0;
 }
 h1{
-    margin-bottom: 50px;
+    margin: 50px 0px;
 }
 a{
     text-decoration: none;
@@ -40,4 +40,21 @@ tr{
 }
 .tr__color{
     background-color: rgb(253, 244, 201);
+}
+label{
+    margin-left: 40px;
+}
+#barra_filtrado{
+    margin: 40px 0px;
+}
+#mensaje{
+    background-color: rgb(192, 238, 192);
+    padding: 30px;
+    width: 60%;
+    border-radius: 10px;
+    justify-self: center;
+    margin-bottom:20px;
+}
+form{
+    margin:20px 0px;
 }

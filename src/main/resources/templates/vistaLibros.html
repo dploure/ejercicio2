@@ -12,8 +12,23 @@
     <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button class="button__grande">Ensayo sobre la ceguera</button></a>
     <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button class="button__grande">1984</button></a>
     <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button class="button__grande">Cementerio de animales</button></a>
+    <form th:action="@{/}" method="get">
+        <label for="busquedaTitulo">Búsqueda por título:  </label><input type="text" name="filtroTitulo" id="busquedaTitulo" placeholder="Inserte el título">
+        <button type="submit">Buscar por título</button>
+    </form>
+    <form th:action="@{/}" method="get">
+        <label for="busquedaAutor">Búsqueda por autor:  </label><input type="text" name="filtroAutor" id="busquedaAutor" placeholder="Inserte el autor">
+        <button type="submit">Buscar por autor</button>
+    </form>
+
+    <div id="barra_filtrado">
+        <a th:href="@{/(disponibles=false)}"><button class="button__grande">Mostar prestados</button></a>
+        <a th:href="@{/(disponibles=true)}"><button class="button__grande">Mostrar disponibles</button></a>
+        <a th:href="@{/}"><button class="button__grande">Mostrar todos</button></a>
+    </div>
 
     <h1>Listado de libros</h1>
+    <div id="mensaje" th:if="${mensaje}!=null" th:text="${mensaje}"></div>
     <table>
         <tr>
             <th>TITULO</th>
