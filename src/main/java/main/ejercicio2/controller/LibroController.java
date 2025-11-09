@@ -1,8 +1,6 @@
 package main.ejercicio2.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -72,8 +70,10 @@ public class LibroController {
     public String añadirLibro(@RequestParam String titulo, @RequestParam String autor, RedirectAttributes redirectAttributes){
         try{
             libroService.agregarLibro(titulo, autor);
-            redirectAttributes.addAttribute("mensaje", "Libro añadido correctamente");
-            return "redirect:/";
+        //    redirectAttributes.addAttribute("mensaje", "Libro añadido correctamente");
+        //    return "redirect:/";
+            return "redirect:/?mensaje=Libro añadido correctamente";
+    
         } catch (LibroException e){
             redirectAttributes.addAttribute("mensaje",e.getMessage());
             return "redirect:/";

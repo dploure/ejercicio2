@@ -8,10 +8,12 @@
 </head>
 <body>
     <h1>Libros para añadir</h1>
-    <a th:href="@{/add(titulo='Los miserables',autor='Víctor Hugo')}"><button class="button__grande">Los miserables</button></a>
-    <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button class="button__grande">Ensayo sobre la ceguera</button></a>
-    <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button class="button__grande">1984</button></a>
-    <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button class="button__grande">Cementerio de animales</button></a>
+    <div id="listado_aniadir">
+        <a th:href="@{/add(titulo='Los miserables',autor='Víctor Hugo')}"><button class="button__grande">Los miserables</button></a>
+        <a th:href="@{/add(titulo='Ensayo sobre la ceguera',autor='José Saramago')}"><button class="button__grande">Ensayo sobre la ceguera</button></a>
+        <a th:href="@{/add(titulo='1984',autor='George Orwell')}"><button class="button__grande">1984</button></a>
+        <a th:href="@{/add(titulo='Cementerio de animales',autor='Stepehen King')}"><button class="button__grande">Cementerio de animales</button></a>
+    </div>
     <form th:action="@{/}" method="get">
         <label for="busquedaTitulo">Búsqueda por título:  </label><input type="text" name="filtroTitulo" id="busquedaTitulo" placeholder="Inserte el título">
         <button type="submit">Buscar por título</button>
